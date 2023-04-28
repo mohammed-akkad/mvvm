@@ -11,6 +11,10 @@ class MainViewModel: ViewModel() {
     val currentUser: LiveData<String>
         get() = _currentUser
 
+    init {
+        getUserName()
+    }
+
     fun getUserName(){
         _currentUser.postValue(fakeApi.getNameUser())
     }
